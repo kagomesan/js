@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>test_page</title>
+ <meta charset="utf-8" />
+</head>
+<body>
+<label for="story">Tell me the truth:</label><br>
+<textarea id="story" rows="5" cols="33">
+</textarea>
+<br>
+<input type="button" value="input" onclick="test()"/>
+<p id="statement"></p>
+<p id="output"></p>
+<script type="text/javascript">
+function test(){
+	var str = document.getElementById("story").value;
+        str = str.replace(/\n+$/g,'');
+        var arr = str.split(/\r\n|\n/);
+        document.getElementById("statement").innerHTML = " your word is.." + '<br>';
+	for (var i = 0; i < arr.length; i++){
+       	document.getElementById("output").innerHTML += arr[i] + " is your word" + '<br>';
+	}
+}
+</script>
+</body>
+</html>
